@@ -1,0 +1,87 @@
+ shkim205  ~  scala
+Welcome to Scala 2.13.5 (OpenJDK 64-Bit Server VM, Java 15.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> 2 *res0
+          ^
+       error: recursive value res0 needs type
+
+scala> 2 * res0
+           ^
+       error: not found: value res0
+
+scala> 5 * 7
+val res2: Int = 35
+
+scala> 2 * res2
+val res3: Int = 70
+
+scala> val x : Int = 5
+val x: Int = 5
+
+scala> x
+val res4: Int = 5
+
+scala> x * 2
+val res5: Int = 10
+
+scala> x / 5
+val res6: Int = 1
+
+scala> rs6 * res5
+       ^
+       error: not found: value rs6
+
+scala> res6 * res5
+val res8: Int = 10
+
+scala> var a : Double = 2.72
+var a: Double = 2.72
+
+scala> a = 355.0 /113.0
+// mutated a
+
+scala> a = 5
+// mutated a
+
+scala> a = 355.0 / 113.0
+// mutated a
+
+scala> val x : Int = 20
+val x: Int = 20
+
+scala> va greeting: String = "Hello, World"
+                           ^
+       error: ';' expected but '=' found.
+
+scala> val greeting: String = "Hello, World"
+val greeting: String = Hello, World
+
+scala> val atSymbol: Char = '@'
+val atSymbol: Char = @
+
+scala> val x = 20
+val x: Int = 20
+
+scala> varl greeting = "Hello, World"
+       ^
+       error: not found: value varl
+            ^
+       error: postfix operator greeting needs to be enabled
+       by making the implicit value scala.language.postfixOps visible.
+       This can be achieved by adding the import clause 'import scala.language.postfixOps'
+       or by setting the compiler option -language:postfixOps.
+       See the Scaladoc for value scala.language.postfixOps for a discussion
+       why the feature needs to be explicitly enabled.
+
+scala> var greeting = "Hello, World"
+var greeting: String = Hello, World
+
+scala> val atSymbol = '@'
+val atSymbol: Char = @
+
+scala> clear
+       ^
+       error: not found: value clear
+
+scala>

@@ -1,0 +1,49 @@
+scala> var red = "
+                 ^
+       error: unclosed string literal
+
+scala> val red = "red" -> "0xff0000"
+val red: (String, String) = (red,0xff0000)
+
+scala>
+
+scala>
+
+scala>
+
+
+
+
+scala>
+
+scala>
+
+scala>
+
+scala> val m = Map("AAPL" -> 597, "MSFT" -> 40 )
+val m: scala.collection.immutable.Map[String,Int] = Map(AAPL -> 597, MSFT -> 40)
+
+scala> val n = m - "AAPL" + ("GOOG" -> 521)
+val n: scala.collection.immutable.Map[String,Int] = Map(MSFT -> 40, GOOG -> 521)
+
+scala> println(m)
+Map(AAPL -> 597, MSFT -> 40)
+
+scala> println(n)
+Map(MSFT -> 40, GOOG -> 521)
+
+scala> val nums = collection.mutable.Buffer(1)
+val nums: scala.collection.mutable.Buffer[Int] = ArrayBuffer(1)
+
+scala> for ( i <- 2 to 10 ) nums += i
+
+scala> println(i)
+65
+
+scala> println(nums)
+ArrayBuffer(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scala> var l = nums.toList
+var l: List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scala>

@@ -1,0 +1,97 @@
+scala> def hi = "hi"
+hi: String
+
+scala> hi
+res0: String = hi
+def <identifier>: <type> = <expression>
+scala> def hi: String = "hi"
+hi: String
+def <identifier>(<identifier>: <type>[, ... ]): <type> = <expression>
+scala> def multiplier(x: Int, y: Int): Int = { x * y }
+multiplier: (x: Int, y: Int)Int
+
+scala> multiplier(6, 7)
+res0: Int = 42
+scala> def safeTrim(s: String): String = {
+     |   if (s == null) return null
+     |   s.trim()
+     | }
+safeTrim: (s: String)String
+
+scala> def log(d: Double) = println(f"Got value $d%.2f")
+log: (d: Double)Unit
+
+scala> def log(d: Double): Unit = println(f"Got value $d%.2f")
+log: (d: Double)Unit
+
+scala> log(2.23535)
+Got value 2.24
+
+scala> def log(d: Double) { println(f"Got value $d%.2f") }
+log: (d: Double)Unit
+
+scala> def formatEuro(amt: Double) = f"€$amt%.2f"
+formatEuro: (amt: Double)String
+
+scala> formatEuro(3.4645)
+res4: String = €3.46
+
+scala> formatEuro { val rate = 1.32; 0.235 + 0.7123 + rate * 5.32 }
+res5: String = €7.97
+
+scala> def power(x: Int, n: Int): Long = {
+     |   if (n >= 1) x * power(x, n-1)
+     |   else 1
+     | }
+power: (x: Int, n: Int)Long
+
+scala> power(2, 8)
+res6: Long = 256
+
+scala> power(2, 1)
+res7: Long = 2
+
+scala> power(2, 0)
+res8: Long = 1
+
+scala> @annotation.tailrec
+     | def power(x: Int, n: Int): Long = {
+     |   if (n >= 1) x * power(x, n-1)
+     |   else 1
+     | }
+<console>:9: error: could not optimize @tailrec annotated method power:
+it contains a recursive call not in tail position
+         if (n >= 1) x * power(x, n-1)
+
+
+
+scala> @annotation.tailrec
+     | def power(x: Int, n: Int): Long = {
+     |   if (n < 1) 1
+     |   else x * power(x, n-1)
+     | }
+<console>:11: error: could not optimize @tailrec annotated method power:
+it contains a recursive call not in tail position
+         else x * power(x, n-1)
+                ^
+
+scala> @annotation.tailrec
+     | def power(x: Int, n: Int, t: Int = 1): Int = {
+     |   if (n < 1) t
+     |   else power(x, n-1, x*t)
+     | }
+power: (x: Int, n: Int, t: Int)Int
+
+scala> power(2,8)
+res9: Int = 256
+
+scala> def max(a: Int, b: Int, c: Int) = {
+     |   def max(x: Int, y: Int) = if (x > y) x else y
+     |   max(a, max(b, c))
+     | }
+max: (a: Int, b: Int, c: Int)Int
+
+scala> max(42, 181, 19)
+res10: Int = 181
+
+

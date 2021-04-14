@@ -1,0 +1,192 @@
+ ✘ shkim205  ~  scala
+Welcome to Scala 2.13.5 (OpenJDK 64-Bit Server VM, Java 15.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> var x = 5
+var x: Int = 5
+
+scala> x = x * 4
+// mutated x
+
+scala> var x = 5
+var x: Int = 5
+
+scala> x = "what's up"
+           ^
+       error: type mismatch;
+        found   : String("what\'s up")
+        required: Int
+
+scala> var y = 1.5
+var y: Double = 1.5
+
+scala> y = 42
+// mutated y
+
+scala> val $ = "USD currency symbol"
+val $: String = USD currency symbol
+
+scala> val b : Byte = 10
+val b: Byte = 10
+
+scala> var s: Short = b
+var s: Short = 10
+
+scala> val d: Double = s
+val d: Double = 10.0
+
+scala>
+
+scala> val l: Long 20
+                   ^
+       error: ';' expected but integer literal found.
+
+scala> val l: Long = 20
+val l: Long = 20
+
+scala> val i: Int = l
+                    ^
+       error: type mismatch;
+        found   : Long
+        required: Int
+
+scala> val l: Long = 20
+val l: Long = 20
+
+scala> val i: Int = l.toInt
+val i: Int = 20
+
+scala> val anInt = 5
+val anInt: Int = 5
+
+scala> val yellowRgb = 0xffff00
+val yellowRgb: Int = 16776960
+
+scala> val id = 100l
+                   ^
+       warning: Lowercase el for long is not recommended because it is easy to confuse with numeral 1; use uppercase L instead
+val id: Long = 100
+
+scala> val id = 100l
+                   ^
+       warning: Lowercase el for long is not recommended because it is easy to confuse with numeral 1; use uppercase L instead
+val id: Long = 100
+
+scala> val pi = 3.1416
+val pi: Double = 3.1416
+
+scala>
+
+scala>
+
+scala> val hello = "hello There"
+val hello: String = hello There
+
+scala> val signature = "with Regards, \n Your Friend"
+val signature: String =
+with Regards,
+ Your Friend
+
+scala> val greeting = " Hello, "  + "world"
+val greeting: String = " Hello, world"
+
+scala> val matched = (greeting == "Hello, World")
+val matched: Boolean = false
+
+scala> val matched = (greeting == "Hello, world")
+val matched: Boolean = false
+
+scala> val item = "apple"
+val item: String = apple
+
+scala> s"Hwo do you like them ${item}s?"
+val res0: String = Hwo do you like them apples?
+
+scala> s"Fish n chips n vinegar, ${"pepper "*3}salt"
+val res1: String = Fish n chips n vinegar, pepper pepper pepper salt
+
+scala> val item ="apple"
+val item: String = apple
+
+scala> f"I worte a new $item%.3s today
+                            ^
+       error: unclosed string literal
+
+scala> f"I worte a new $item%.3s today"
+val res2: String = I worte a new app today
+
+scala>
+
+scala>
+
+scala> var input = "Enjoying this apple 3.14159 times today"
+var input: String = Enjoying this apple 3.14159 times today
+
+scala> val pattern = """.* apple ([\d.]+) times .*""".r
+val pattern: scala.util.matching.Regex = .* apple ([\d.]+) times .*
+
+scala> val pattern(amountText) = input
+val amountText: String = 3.14159
+
+scala> val amount = amountText.toDouble
+val amount: Double = 3.14159
+
+scala>
+
+scala> val c = 'A'
+val c: Char = A
+
+scala> val i: Int = c
+val i: Int = 65
+
+scala> val t: Cahr = 116
+              ^
+       error: not found: type Cahr
+
+scala> val t: Char = 116
+val t: Char = t
+
+scala> val isTrue = !true
+val isTrue: Boolean = false
+
+scala> val isFalse = !true
+val isFalse: Boolean = false
+
+scala> val unequal = ( 5 != 6)
+val unequal: Boolean = true
+
+scala> val isLess = ( 5 < 6 )
+val isLess: Boolean = true
+
+scala> val unequalAndLess = unequal &isLess
+val unequalAndLess: Boolean = true
+
+scala> val definitelyFalse = false && unequal
+val definitelyFalse: Boolean = false
+
+scala> va zero = 0
+       ^
+       error: not found: value va
+          ^
+       error: postfix operator zero needs to be enabled
+       by making the implicit value scala.language.postfixOps visible.
+       This can be achieved by adding the import clause 'import scala.language.postfixOps'
+       or by setting the compiler option -language:postfixOps.
+       See the Scaladoc for value scala.language.postfixOps for a discussion
+       why the feature needs to be explicitly enabled.
+
+scala> val zero = 0
+val zero: Int = 0
+
+scala> val isValid = zero > 0
+val isValid: Boolean = false
+
+scala> val nada = zeor > 0
+                  ^
+       error: not found: value zeor
+
+scala> val nada = zero > 0
+val nada: Boolean = false
+
+scala> val nada = ()
+val nada: Unit = ()

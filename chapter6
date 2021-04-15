@@ -1,0 +1,148 @@
+scala> val numbers = List(32, 95, 24, 21, 17)
+numbers: List[Int] = List(32, 95, 24, 21, 17)
+
+scala> val colors = List("red", "green", "blue")
+colors: List[String] = List(red, green, blue)
+
+scala> println(s"I have ${colors.size} colors: $colors")
+I have 3 colors: List(red, green, blue)
+
+
+scala> val colors = List("red", "green", "blue")
+colors: List[String] = List(red, green, blue)
+
+scala> colors.head
+res0: String = red
+
+scala> colors.tail
+res1: List[String] = List(green, blue)
+
+scala> colors(1)
+res2: String = green
+
+scala> colors(2)
+res3: String = blue
+
+scala> val numbers = List(32, 95, 24, 21, 17)
+numbers: List[Int] = List(32, 95, 24, 21, 17)
+
+scala> var total = 0; for (i <- numbers) { total += i }
+total: Int = 189
+
+scala> val colors = List("red", "green", "blue")
+colors: List[String] = List(red, green, blue)
+
+scala> for (c <- colors) { println(c) }
+red
+green
+blue
+
+scala> val colors = List("red", "green", "blue")
+colors: List[String] = List(red, green, blue)
+
+scala> colors.foreach( (c: String) => println(c) ) (1)
+red
+green
+blue
+
+scala> val sizes = colors.map( (c: String) => c.size ) (2)
+sizes: List[Int] = List(3, 5, 4)
+
+scala> val numbers = List(32, 95, 24, 21, 17)
+numbers: List[Int] = List(32, 95, 24, 21, 17)
+
+scala> val total = numbers.reduce( (a: Int, b: Int) => a + b ) (3)
+total: Int = 189
+
+scala> val unique = Set(10, 20, 30, 20, 20, 10)
+unique: scala.collection.immutable.Set[Int] = Set(10, 20, 30)
+
+scala> val sum = unique.reduce( (a: Int, b: Int) => a + b )
+sum: Int = 60
+
+
+scala> val colorMap = Map("red" -> 0xFF0000, "green" -> 0xFF00,
+  "blue" -> 0xFF)
+colorMap: scala.collection.immutable.Map[String,Int] =
+  Map(red -> 16711680, green -> 65280, blue -> 255)
+
+scala> val redRGB = colorMap("red")
+redRGB: Int = 16711680
+
+scala> val cyanRGB = colorMap("green") | colorMap("blue")
+cyanRGB: Int = 65535
+
+scala> val hasWhite = colorMap.contains("white")
+hasWhite: Boolean = false
+
+scala> for (pairs <- colorMap) { println(pairs) }
+(red,16711680)
+(green,65280)
+(blue,255)
+
+scala> val colors = List("red", "green", "blue")
+colors: List[String] = List(red, green, blue)
+
+scala> val oddsAndEvents = List(List(1, 3, 5), List(2, 4, 6))
+oddsAndEvents: List[List[Int]] = List(List(1, 3, 5), List(2, 4, 6))
+
+scala> val keyValues = List(('A', 65), ('B',66), ('C',67))
+keyValues: List[(Char, Int)] = List((A,65), (B,66), (C,67))
+
+scala> val primes = List(2, 3, 5, 7, 11, 13)
+primes: List[Int] = List(2, 3, 5, 7, 11, 13)
+
+scala> val first = primes(0)
+first: Int = 2
+
+scala> val fourth = primes(3)
+fourth: Int = 7
+
+scala> val first = primes.head
+first: Int = 2
+
+scala> val remaining = primes.tail
+remaining: List[Int] = List(3, 5, 7, 11, 13)
+
+scala> val primes = List(2, 3, 5, 7, 11, 13)
+primes: List[Int] = List(2, 3, 5, 7, 11, 13)
+
+scala> var i = primes
+i: List[Int] = List(2, 3, 5, 7, 11, 13)
+
+scala> while(! i.isEmpty) { print(i.head + ", "); i = i.tail }
+2, 3, 5, 7, 11, 13,
+
+
+scala> val primes = List(2, 3, 5, 7, 11, 13)
+primes: List[Int] = List(2, 3, 5, 7, 11, 13)
+
+scala> def visit(i: List[Int]) { if (i.size > 0) { print(i.head + ", "); visit(i.tail) } }
+visit: (i: List[Int])Unit
+
+scala> visit(primes)
+2, 3, 5, 7, 11, 13,
+
+scala> val primes = List(2, 3, 5, 7, 11, 13)
+primes: List[Int] = List(2, 3, 5, 7, 11, 13)
+
+scala> var i = primes
+i: List[Int] = List(2, 3, 5, 7, 11, 13)
+
+scala> while(i != Nil) { print(i.head + ", "); i = i.tail }
+2, 3, 5, 7, 11, 13,
+
+scala> val l: List[Int] = List()
+l: List[Int] = List()
+
+scala> l == Nil
+res0: Boolean = true
+
+scala> val m: List[String] = List("a")
+m: List[String] = List(a)
+
+scala> m.head
+res1: String = a
+
+scala> m.tail == Nil
+res2: Boolean = true

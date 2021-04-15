@@ -1,0 +1,119 @@
+scala> def double(x: Int): Int = x * 2
+double: (x: Int)Int
+
+scala> double(5)
+res0: Int = 10
+
+scala> val myDouble: (Int) => Int = double                                
+myDouble: Int => Int = $$Lambda$1664/192389035@6d73c7e1)
+
+scala> myDouble(5)                                                        
+res1: Int = 10
+
+scala> val myDoubleCopy = myDouble
+myDoubleCopy: Int => Int = $$Lambda$1665/1881990320@72d44701
+
+scala> myDoubleCopy(5)                                                    
+res2: Int = 10
+
+scala> def double(x: Int): Int = x * 2
+double: (x: Int)Int
+
+scala> val myDouble = double _
+myDouble: Int => Int = $$Lambda$1666/17524610@5e9dc66
+
+scala> val amount = myDouble(20)
+amount: Int = 40
+
+
+scala> def max(a: Int, b: Int) = if (a > b) a else b
+max: (a: Int, b: Int)Int
+
+scala> val maximize: (Int, Int) => Int = max
+maximize: (Int, Int) => Int = $$Lambda$1667/994103853@47f389ca
+
+scala> maximize(50, 30)
+res3: Int = 50
+
+scala> def logStart() = "=" * 50 + "\nStarting NOW\n" + "=" * 50
+logStart: ()String
+
+scala> val start: () => String = logStart
+<console>:12: warning: Eta-expansion of zero-argument method values is deprecated. Did you intend to write logStart()?
+   val start: () => String = logStart
+                       ^
+start: () => String = $$Lambda$1672/2139800358@7f2789a0
+
+scala> println( start() )
+===================================================
+Starting NOW
+===================================================
+
+
+scala> def safeStringOp(s: String, f: String => String) = {
+     |   if (s != null) f(s) else s
+     | }
+safeStringOp: (s: String, f: String => String)String
+
+scala> def reverser(s: String) = s.reverse
+reverser: (s: String)String
+
+scala> safeStringOp(null, reverser)
+res4: String = null
+
+scala> safeStringOp("Ready", reverser)
+res5: String = ydaeR
+
+scala> val doubler = (x: Int) => x * 2
+doubler: Int => Int = $$Lambda$1677/759776058@7e69228d
+
+scala> val doubled = doubler(22)
+doubled: Int = 44
+
+
+scala> val greeter = (name: String) => s"Hello, $name"
+greeter: String => String = $$Lambda$1678/105198636@5d8a6614
+
+scala> val hi = greeter("World")
+hi: String = Hello, World
+
+
+scala> def max(a: Int, b: Int) = if (a > b) a else b                        
+max: (a: Int, b: Int)Int
+
+scala> val maximize: (Int, Int) => Int = max                               
+maximize: (Int, Int) => Int = $$Lambda$1679/1198603051@45eeed13
+
+scala> val maximize = (a: Int, b: Int) => if (a > b) a else b               
+maximize: (Int, Int) => Int = <function2>
+
+scala> maximize(84, 96)
+res6: Int = 96
+
+scala> def logStart() = "=" * 50 + "\nStarting NOW\n" + "=" * 50
+logStart: ()String
+
+scala> val start = () => "=" * 50 + "\nStarting NOW\n" + "=" * 50
+start: () => String = $$Lambda$1680/567484288@2d133184
+
+scala> println( start() )
+===================================================
+Starting NOW
+===================================================
+
+scala> def safeStringOp(s: String, f: String => String) = {
+     |   if (s != null) f(s) else s
+     | }
+safeStringOp: (s: String, f: String => String)String
+
+scala> safeStringOp(null, (s: String) => s.reverse)
+res7: String = null
+
+scala> safeStringOp("Ready", (s: String) => s.reverse)
+res8: String = ydaeR
+
+scala> safeStringOp(null, s => s.reverse)
+res9: String = null
+
+scala> safeStringOp("Ready", s => s.reverse)
+res10: String = ydaeR
